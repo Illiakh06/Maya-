@@ -8,7 +8,7 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* Ensure everything fits well on mobile screens */
+/* Mobile-friendly container */
 .container {
     background: white;
     padding: 40px;
@@ -20,7 +20,6 @@ body {
     position: relative;
 }
 
-/* Mobile optimization */
 @media (max-width: 768px) {
     .container {
         padding: 25px;
@@ -36,7 +35,7 @@ body {
     }
 
     .heart-animation {
-        width: 60px; /* Keep the same heart animation, but responsive */
+        width: 60px; /* Keep heart animation responsive */
         height: 60px;
     }
 
@@ -110,15 +109,11 @@ body {
     }
 }
 
-/* Responsive button adjustments */
-button {
-    font-size: 16px;
-    padding: 10px 15px;
-}
-
-@media (max-width: 768px) {
-    button {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
+/* Continuous screen shake effect */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    25% { transform: translate(-1px, -2px) rotate(-1deg); }
+    50% { transform: translate(-3px, 0px) rotate(1deg); }
+    75% { transform: translate(3px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -1px) rotate(-1deg); }
 }

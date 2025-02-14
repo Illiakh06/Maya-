@@ -41,7 +41,7 @@ function triggerConfetti() {
     const chaosContainer = document.getElementById("chaos-effects");
     chaosContainer.innerHTML = "";
 
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 80; i++) { // Reduced to optimize mobile performance
         let confetti = document.createElement("div");
         confetti.innerHTML = ["💖", "💝", "💘", "💗", "🎉", "🌟", "❤️", "🔥", "💜", "💙", "💚"][Math.floor(Math.random() * 11)];
         confetti.classList.add("confetti");
@@ -49,7 +49,7 @@ function triggerConfetti() {
         confetti.style.animationDuration = (Math.random() * 2 + 1) + "s";
         chaosContainer.appendChild(confetti);
 
-        setTimeout(() => confetti.remove(), 5000);
+        setTimeout(() => confetti.remove(), 4000); // Adjusted for better performance
     }
 }
 
@@ -64,12 +64,12 @@ function triggerColorChange() {
     let interval = setInterval(() => {
         document.body.style.backgroundColor = colors[i % colors.length];
         i++;
-        if (i > 30) clearInterval(interval);
+        if (i > 25) clearInterval(interval); // Optimized loop
     }, 150);
 }
 
 function triggerFloatingHearts() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) { // Optimized to prevent mobile lag
         let heart = document.createElement("div");
         heart.innerHTML = ["💖", "💘", "💗", "💓", "💞", "💕"][Math.floor(Math.random() * 6)];
         heart.classList.add("floating-heart");
@@ -77,6 +77,6 @@ function triggerFloatingHearts() {
         heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
         document.body.appendChild(heart);
 
-        setTimeout(() => heart.remove(), 6000);
+        setTimeout(() => heart.remove(), 5000); // Optimized timing
     }
 }
